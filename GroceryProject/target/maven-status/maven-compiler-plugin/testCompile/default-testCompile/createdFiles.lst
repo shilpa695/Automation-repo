@@ -1,0 +1,7 @@
+testScripts\LoginTest.class
+reportGeneration\Listeners.class
+testScripts\ManagenewsTest.class
+retrymechanism\Retry.class
+testScripts\AdminusersTest.class
+testScripts\HomeTest.class
+automationCore\TestngBase.class

@@ -1,5 +1,9 @@
 package seleniumbasics;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +38,17 @@ public class HandlingActions extends Base{
 		act.dragAndDrop(drag,drop).build().perform();
 	}
 	
+	//keyboard Action
+	public void verifyKeyboardAction() throws AWTException {
+		//shortkeys using keyboard eg.ctrl+t for opening a new tab
+		//keyboardaction is done with the help of "robot"
+		Robot robot=new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_T);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_T);
+	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -41,7 +56,13 @@ public class HandlingActions extends Base{
    actions.browserLaunch();
   // actions.verifyMouseOver();
   // actions.verifyRightClick();
-   actions.verifyDragAndDrop();
+  // actions.verifyDragAndDrop();
+   try {
+	actions.verifyKeyboardAction();
+} catch (AWTException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 	}
 
 }

@@ -32,7 +32,9 @@ public class HandlingDropDown extends Base {
 		//checkbox//at a time multiple selection
 	 public void verifyCheckBox() {
 		 WebElement checkBox =driver.findElement(By.xpath("//input[@value='option-1']"));
+		 System.out.println(checkBox.isSelected());
 		 checkBox.click();
+		
 	  }
 	 public void verifyRadioButton() {
 		 WebElement radioButton=driver.findElement(By.xpath("//input[@value='green']"));
